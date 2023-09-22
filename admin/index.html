@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
     <meta charset="utf-8">
@@ -7,17 +7,20 @@
     <title>link</title>
     <link rel="stylesheet" href="/admin/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/admin/assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="icon" href="../link.ico">
 </head>
 
 <body style="background: var(--bs-dark);">
     <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-server">
-                        <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"></path>
-                        <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z"></path>
-                        <path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"></path>
-                    </svg></span><span>Serverless ShortUrl</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
+                    class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
+                    <img src="../link.ico" width="30" height="30">
+                </span><span>Serverless 短链</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-5">
-                <ul class="navbar-nav ms-auto"></ul><a id="logOutBtn" class="btn btn-primary ms-md-2" role="button" href="javascript:logout();">Logout</a>
+                <ul class="navbar-nav ms-auto"></ul><a id="logOutBtn" class="btn btn-primary ms-md-2" role="button"
+                    href="javascript:logout();">注销登录</a>
             </div>
         </div>
     </nav>
@@ -27,19 +30,25 @@
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>Login</h2>
+                            <h2>登录后台</h2>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-6 col-xl-4">
                             <div class="card mb-5">
                                 <div class="card-body d-flex flex-column align-items-center">
-                                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                            <path
+                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
+                                            </path>
                                         </svg></div>
                                     <form class="text-center" id="session_login_from" action="javascript:void(0)">
-                                        <div class="mb-3"><input class="form-control" type="password" placeholder="session" id="session"></div>
-                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" onclick="javascript:login();">Login</button></div>
+                                        <div class="mb-3"><input class="form-control" type="password" placeholder="登陆密钥"
+                                                id="session"></div>
+                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit"
+                                                onclick="javascript:login();">登录</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -49,17 +58,22 @@
             </section>
         </div>
     </div>
-    <div id="card_memu" class="card" style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
-        <div class="card-body"><span><a href="javascript:showcard('card_add')">Create 新建</a>&nbsp;<a href="javascript:showcard('card_list')">List 列表</a></span></div>
+    <div id="card_memu" class="card"
+        style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
+        <div class="card-body d-flex col-4">
+            <button class="btn btn-primary d-block w-20" type="submit" onclick="javascript:showcard('card_add')">创建短链接</button>&nbsp
+            <button class="btn btn-primary d-block w-20" type="submit" onclick="javascript:showcard('card_list')">查看短链接列表</button>
+        </div>
     </div>
-    <div id="card_add" class="card" style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
+    <div id="card_add" class="card"
+        style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
         <div class="card-body">
             <section class="py-4 py-xl-5">
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>新建 Create</h2>
-                            <p>Create a new short URL 新建短链接</p>
+                            <h2>创建新的短链接</h2>
+                            <p>Create a new short URL</p>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -67,9 +81,12 @@
                             <div class="card mb-5">
                                 <div class="card-body d-flex flex-column align-items-center">
                                     <form class="text-center" action="javascript:void(0);" id="shortFrom">
-                                        <div class="mb-3"><input class="form-control" type="text" placeholder="http(s)://" id="longUrl"></div>
-                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" onclick="shortUrl()" id="shortBtn">Shorten it</button></div>
-                                        <p class="text-start" id="shortUrlShower">URL</p>
+                                        <div class="mb-3"><input class="form-control" type="text" placeholder="输入原链接"
+                                                id="longUrl"></div>
+                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit"
+                                                onclick="shortUrl()" id="shortBtn">生成短链接</button></div>
+                                        <div class="mb-3"><input class="form-control" type="text" readonly="true" placeholder="等待生成短链"
+                                               id="shortUrlShower"></div>
                                     </form>
                                 </div>
                             </div>
@@ -79,15 +96,17 @@
             </section>
         </div>
     </div>
-    <div id="card_list" class="card" style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
+    <div id="card_list" class="card"
+        style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);display: none;">
         <div class="card-body">
             <section class="py-4 py-xl-5">
                 <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>List of URLs 网址列表</h2>
-                            <a href="javascript:loadList();">Refresh 刷新</a>
+                    <div class="mb-5 align-items-center">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto align-content-center">
+                            <h2>当前短链列表</h2>
+                            <button class="btn btn-primary w-20 align-self-center align-items-center" type="submit"  onclick="javascript:loadList();">刷新</button>
                         </div>
+
                     </div>
                     <div id="list_list">
                         <div class="col">
@@ -95,9 +114,9 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>ShortUrl</th>
-                                            <th>To</th>
-                                            <th>CreateTime</th>
+                                            <th>短链后缀</th>
+                                            <th>原链</th>
+                                            <th>创建时间</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -126,12 +145,19 @@
     </div>
     <div class="card" style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);">
         <div class="card-body">
-            <div class="text-center"><span><a target = "_blank" href="https://github.com/fuingzu/ShortUrl">Github</a> <a href="https://github.com/fuingzu" target="_blank">Fuingzu</a> make with ❤</span></div>
+            <div class="text-center">
+                <span>基于
+                    <a href="https://github.com/fuingzu" target="_blank">Fuingzu</a> /
+                    <a target="_blank" href="https://github.com/fuingzu/ShortUrl">ShortUrl</a> 项目，由
+                    <a href="https://github.com/GeorgeDong32" target="_blank">GeorgeDong32</a> 二次开发
+                </span>
+            </div>
         </div>
     </div>
     <div class="card" style="margin-right: 5%;margin-left: 5%;background: var(--bs-gray-400);">
         <div class="card-body">
-            <div class="text-center"><span><a target = "_blank" href="https://beian.miit.gov.cn">粤ICP备2023105219号</a></span></div>
+            <div class="text-center"><span><a target="_blank"
+                        href="https://beian.miit.gov.cn">粤ICP备2023105219号-1</a></span></div>
         </div>
     </div>
     <script src="/admin/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -205,20 +231,20 @@
         urlencoded.append("session", getCookie("session"));
 
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
         };
 
         fetch("/", requestOptions)
-        .then(response => response.text())
-        .then(result => {
-            if (JSON.parse(result).error != undefined) {
-                logout();
-            }
-        })
-        .catch(error => console.log('error', error));
+            .then(response => response.text())
+            .then(result => {
+                if (JSON.parse(result).error != undefined) {
+                    logout();
+                }
+            })
+            .catch(error => console.log('error', error));
 
     }
 
@@ -260,29 +286,29 @@
         urlencoded.append("session", getCookie("session"));
 
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
         };
 
         fetch("/", requestOptions)
-        .then(response => response.text())
-        .then(result => {
-            if (JSON.parse(result).error != undefined) {
-                logout();
-            } else {
-                alert("success");
-                // 取当前域名
-                var host = window.location.host;
-                // 取当前协议
-                var protocol = window.location.protocol;
+            .then(response => response.text())
+            .then(result => {
+                if (JSON.parse(result).error != undefined) {
+                    logout();
+                } else {
+                    alert("success");
+                    // 取当前域名
+                    var host = window.location.host;
+                    // 取当前协议
+                    var protocol = window.location.protocol;
 
-                shortUrlShower.innerHTML = protocol+"//"+host+"/"+JSON.parse(result).path;
-                shortBtn.disabled = false;
-            }
-        })
-        .catch(error => console.log('error', error));
+                    shortUrlShower.innerHTML = protocol + "//" + host + "/" + JSON.parse(result).path;
+                    shortBtn.disabled = false;
+                }
+            })
+            .catch(error => console.log('error', error));
 
     }
 
@@ -297,84 +323,84 @@
         list_list.style.display = "none";
 
         var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
+            method: 'GET',
+            redirect: 'follow'
         };
 
-        fetch("/?api=list&session="+getCookie("session"), requestOptions)
-        .then(response => response.text())
-        .then(result => {
+        fetch("/?api=list&session=" + getCookie("session"), requestOptions)
+            .then(response => response.text())
+            .then(result => {
 
-            if (JSON.parse(result).error != undefined) {
-                // logout();
-            } else {
+                if (JSON.parse(result).error != undefined) {
+                    // logout();
+                } else {
 
-                list_msg_p.innerHTML = "";
-                list_list.style.display = "block";
+                    list_msg_p.innerHTML = "";
+                    list_list.style.display = "block";
 
-                var list = JSON.parse(result);
-                var listNum = list.length;
+                    var list = JSON.parse(result);
+                    var listNum = list.length;
 
-                for (var i = 0; i < listNum; i++) {
-                    var path = list[i].path;
-                    var link = list[i].link;
-                    var time = list[i].time;
+                    for (var i = 0; i < listNum; i++) {
+                        var path = list[i].path;
+                        var link = list[i].link;
+                        var time = list[i].time;
 
-                    // console.log(path);
+                        // console.log(path);
 
-                    // var listTable = document.getElementById("listTable");
-                    // var tr = document.createElement("tr");
-                    // var td1 = document.createElement("td");
-                    // var td2 = document.createElement("td");
-                    // var td3 = document.createElement("td");
+                        // var listTable = document.getElementById("listTable");
+                        // var tr = document.createElement("tr");
+                        // var td1 = document.createElement("td");
+                        // var td2 = document.createElement("td");
+                        // var td3 = document.createElement("td");
 
-                    // td1.innerHTML = path;
-                    // td2.innerHTML = link;
-                    // td3.inertHTML = "<a href='javascript:"+'deleteUrl("'+path+'")'+"'></a>"
-
-
-                    // tr.appendChild(td1);
-                    // tr.appendChild(td2);
-                    // tr.appendChild(td3);
-
-                    // listTable.appendChild(tr);
-
-                    // 格式化时间戳
-                    var date = new Date(time);
-                    var Y = date.getFullYear() + '-';
-                    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-                    var D = date.getDate() + ' ';
-                    var h = date.getHours() + ':';
-                    var m = date.getMinutes() + ':';
-                    var s = date.getSeconds();
-                    time = Y+M+D+h+m+s;
+                        // td1.innerHTML = path;
+                        // td2.innerHTML = link;
+                        // td3.inertHTML = "<a href='javascript:"+'deleteUrl("'+path+'")'+"'></a>"
 
 
+                        // tr.appendChild(td1);
+                        // tr.appendChild(td2);
+                        // tr.appendChild(td3);
+
+                        // listTable.appendChild(tr);
+
+                        // 格式化时间戳
+                        var date = new Date(time);
+                        var Y = date.getFullYear() + '-';
+                        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                        var D = date.getDate() + ' ';
+                        var h = date.getHours() + ':';
+                        var m = date.getMinutes() + ':';
+                        var s = date.getSeconds();
+                        time = Y + M + D + h + m + s;
 
 
-                    // 写入列表
-                    var tr = document.createElement("tr");
-                    var td1 = document.createElement("td");
-                    var td2 = document.createElement("td");
-                    var td3 = document.createElement("td");
-                    var td4 = document.createElement("td");
 
-                    td1.innerHTML = path;
-                    td2.innerHTML = link;
-                    td3.innerHTML = time;
-                    td4.innerHTML = "<a href='javascript:"+'deleteUrl("'+path+'")'+"'>删除</a>";
 
-                    tr.appendChild(td1);
-                    tr.appendChild(td2);
-                    tr.appendChild(td3);
-                    tr.appendChild(td4);
+                        // 写入列表
+                        var tr = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        var td2 = document.createElement("td");
+                        var td3 = document.createElement("td");
+                        var td4 = document.createElement("td");
 
-                    listTable.appendChild(tr);
+                        td1.innerHTML = path;
+                        td2.innerHTML = link;
+                        td3.innerHTML = time;
+                        td4.innerHTML = "<a href='javascript:" + 'deleteUrl("' + path + '")' + "'>删除</a>";
 
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        tr.appendChild(td3);
+                        tr.appendChild(td4);
+
+                        listTable.appendChild(tr);
+
+                    }
                 }
-            }
-        })
-        .catch(error => console.log('error', error));
+            })
+            .catch(error => console.log('error', error));
 
     }
 
@@ -384,7 +410,7 @@
         var list_list = document.getElementById("list_list");
 
         list_list.style.display = "none";
-        list_msg_p.innerHTML = "Deleting "+path;
+        list_msg_p.innerHTML = "Deleting " + path;
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -395,25 +421,25 @@
         urlencoded.append("session", getCookie("session"));
 
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
         };
 
         fetch("/", requestOptions)
-        .then(response => response.text())
-        .then(result => {
-            if (JSON.parse(result).error != undefined) {
-                logout();
-            } else {
-                loadList();
-                list_msg_p.innerHTML = "";
-                list_list.style.display = "block";
-                alert("success");
-            }
-        })
-        .catch(error => console.log('error', error));
+            .then(response => response.text())
+            .then(result => {
+                if (JSON.parse(result).error != undefined) {
+                    logout();
+                } else {
+                    loadList();
+                    list_msg_p.innerHTML = "";
+                    list_list.style.display = "block";
+                    alert("success");
+                }
+            })
+            .catch(error => console.log('error', error));
 
 
     }
