@@ -1,5 +1,4 @@
-const { mongodbUrl, AdminSession } = process.env || {} // 获取环境变量
-const { mongodbUrl, AdminSession } = process.env || {} // 获取环境变量
+const { mongodbUrl,AdminSession } = process.env || {} // 获取环境变量
 const linkLen = process.env.linkLen || 10 // 如未指定链接长度则默认为10
 let database = null
 
@@ -21,7 +20,7 @@ function randomString(len) {
     return pwd
 }
 
-module.exports = async (request, response) => {
+module.exports =  async (request, response) => {
 
     if (mongodbUrl == undefined || AdminSession == undefined) { // 判断环境变量是否存在
         response.status(403).json({ "error": 'Environment variable not configured' })
@@ -29,7 +28,7 @@ module.exports = async (request, response) => {
 
     } else {
         let res = null
-
+    
         // 获取请求地址
         let url = request.url
 
@@ -100,9 +99,9 @@ module.exports = async (request, response) => {
         } else {
             if (res.error == undefined) {
                 if (res.goLink != undefined) { // 如果有goLink则跳转
-                    // 302 重定向
-                    response.status(302).setHeader('Location', res.goLink)
-                    response.end()
+                  // 302 重定向
+                  response.status(302).setHeader('Location', res.goLink)
+                  response.end()
                 } else {
                     response.status(200).json(res)
                 }
@@ -203,7 +202,7 @@ async function addLink(requestsBody, url, ip) { // 添加链接
             }
         }
 
-        var obj = { "path": path, "link": link, "ip": ip, "time": new Date().getTime() }
+        var obj = {"path":path,"link":link,"ip":ip,"time":new Date().getTime()}
 
         // 写入数据库
         return new Promise((resolve, reject) => {
@@ -225,7 +224,7 @@ async function addLink(requestsBody, url, ip) { // 添加链接
         if (link == undefined) {
             return { "error": 'link cannot be empty' }
         } else {
-            return { "path": await insertLink(link) }
+            return {"path":await insertLink(link)}
         }
 
     } else {
@@ -233,11 +232,11 @@ async function addLink(requestsBody, url, ip) { // 添加链接
     }
 }
 
-async function index(requestsBody, url, metmod) { // 索引
+async function index(requestsBody, url,metmod) { // 索引
+    
+    url = url.replace('/','')
 
-    url = url.replace('/', '')
-
-    var linkData = await searchUrl(url)
+    var linkData =  await searchUrl(url)
     var getLink = requestsBody.getLink
 
     // console.log(linkData)
@@ -246,12 +245,12 @@ async function index(requestsBody, url, metmod) { // 索引
     } else {
         var link = linkData[0]["link"]
         if (metmod == "POST" && getLink == "true") {
-            return { "link": link }
+            return {"link":link}
         } else {
-            return { "goLink": link }
+            return {"goLink":link}
         }
     }
-
+    
 }
 
 // 链接数据库
@@ -286,7 +285,7 @@ async function db_connect() {
 // 查询数据库
 function searchUrl(url) {
     return new Promise((resolve, reject) => {
-        database.collection('Links').find({ "path": url }).toArray((err, result) => {
+        database.collection('Links').find({"path":url}).toArray((err, result) => {
             if (err) {
                 reject(err)
             } else {
