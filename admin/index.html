@@ -301,13 +301,17 @@
                 if (JSON.parse(result).error != undefined) {
                     logout();
                 } else {
-                    alert("success");
                     // 取当前域名
                     var host = window.location.host;
                     // 取当前协议
                     var protocol = window.location.protocol;
 
                     shortUrlShower.value = protocol + "//" + host + "/" + JSON.parse(result).path;
+                    //复制到剪切板
+                    shortUrlShower.select();
+                    shortUrlShower.setSelectionRange(0, 9999);
+                    navigator.clipboard.writeText(shortUrlShower.value);
+                    alert("成功添加短链接,已复制到剪切板!");
                     shortBtn.disabled = false;
                 }
             })
