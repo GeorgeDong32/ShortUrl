@@ -304,7 +304,7 @@
                     // 取当前协议
                     var protocol = window.location.protocol;
 
-                    shortUrlShower.textContent = protocol + "//" + host + "/" + JSON.parse(result).path;
+                    shortUrlShower.value = protocol + "//" + host + "/" + JSON.parse(result).path;
                     shortBtn.disabled = false;
                 }
             })
