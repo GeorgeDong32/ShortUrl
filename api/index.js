@@ -236,10 +236,6 @@ async function index(requestsBody, url, metmod) { // 索引
 
     url = url.replace('/', '')
 
-    if (url == "") {
-        return { "link": "https://link.georgedong.tech/admin" }
-    }
-
     var linkData = await searchUrl(url)
     var getLink = requestsBody.getLink
 
